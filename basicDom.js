@@ -69,8 +69,47 @@ var items = document.getElementsByClassName('list-group-item');
 //console.log(items[1]);
 //items[1].textContent = 'hello 2';
 //items.style.fontWeight = 'bold'; it shows error we need to use for loop if we want entire items to be in same colour ,if we want entire items to be in bold case etc. single items can get diff colour,bold letterhere no need of use for loop.
-items[2].style.backgroundColor = 'green';
+/*items[2].style.backgroundColor = 'green';
 for(var i=0;i<items.length;i++){
     console.log(items[1])
     items[i].style.backgroundColor = 'gray'; //by using classname eventhough we canged background color of all the items then also item 5 color is not changed
+}*/
+
+//querySelector
+/*var header = document.querySelector('#main-header');
+header.style.borderBottom = 'solid 4px gray';
+
+var input = document.querySelector('input');
+input.value = 'Hello World';
+
+var submit = document.querySelector('input[type = "submit"]');
+submit.value = 'SEND';
+
+var item = document.querySelector('.list-group-item');
+item.style.color = 'red';
+
+var lastItem= document.querySelector('.list-group-item:last-child');
+lastItem.style.color = 'blue'; */
+
+//Make the 2nd item have green background color
+//var secondItem = document.querySelector('.list-group-item:nth-child(2)');
+//secondItem.style.color = 'green';
+
+//Make the 3rd item invisible
+var thirdItem = document.querySelector('.list-group-item:nth-child(3)');
+thirdItem.style.visibility = 'hidden';
+
+//Choose all the odd elements and make their background green using QuerySelectorALL
+var odd = document.querySelectorAll('li:nth-child(odd)');
+for(var i=0;i<odd.length;i++){
+    odd[i].style.backgroundColor = 'green';
 }
+
+/*var even = document.querySelectorAll('li:nth-child(even)');
+for(var i=0;i<even.length;i++){
+    even[i].style.backgroundColor = 'green';
+}*/
+
+//Using QuerySelectorALL change the font color to green for 2nd item in the item list
+var li = document.querySelectorAll('li');
+li[1].style.color = 'green';
