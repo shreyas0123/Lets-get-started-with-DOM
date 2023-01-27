@@ -51,3 +51,26 @@ items[2].style.backgroundColor = 'green';
 for(var i=0;i<items.length;i++){
     items[i].style.fontWeight = 'bold';
 }
+
+//Add a new li element without the same class Name in html file
+//And try editing it with getelementbytagname
+/*var li = document.getElementsByTagName('li');
+console.log(li);
+console.log(li[1]);
+li[1].textContent = 'hello 2';
+for(var i=0;i<li.length;i++){
+    li[i].style.backgroundColor = 'gray'; //by using tagName we changed background color of all the items, item 5 color is also changed.
+} */
+
+//Add a new li element without the same class Name in html file
+//And try editing it with getelementsbyclassname
+var items = document.getElementsByClassName('list-group-item');
+//console.log(items);
+//console.log(items[1]);
+//items[1].textContent = 'hello 2';
+//items.style.fontWeight = 'bold'; it shows error we need to use for loop if we want entire items to be in same colour ,if we want entire items to be in bold case etc. single items can get diff colour,bold letterhere no need of use for loop.
+items[2].style.backgroundColor = 'green';
+for(var i=0;i<items.length;i++){
+    console.log(items[1])
+    items[i].style.backgroundColor = 'gray'; //by using classname eventhough we canged background color of all the items then also item 5 color is not changed
+}
