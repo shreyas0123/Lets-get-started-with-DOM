@@ -28,16 +28,26 @@
 
 
 //console.dir(document)
-
+//Make the title have a black border
 var headerTitle = document.getElementById('header-title');
 var header = document.getElementById('main-header');
 
 header.style.borderBottom = 'solid 3px #000'; 
 
-//var items = document.getElementsById('ADD');
-//items.style.color = 'green';
-//items.style.fontWeight='bold';
-
-var additems = document.getElementById("ADD");
+//Now make ADD ITEM bold and chage the font color to greeen
+var additems = document.getElementById("ADD");//"ADD" in order to get ADD ITEM bold we need to give id ,let say id = "ADD"
 additems.style.color = 'green';
-additems.style.fontWeight='bold';
+additems.style.fontWeight='bold'; 
+
+//getelementsbyclassname
+//Make the 3 rd element in the list have green background color
+//Make all the elements in the list have bold color font
+var items = document.getElementsByClassName('list-group-item');
+//console.log(items);
+//console.log(items[1]);
+//items[1].textContent = 'hello 2';
+//items.style.fontWeight = 'bold'; it shows error we need to use for loop if we want entire items to be in same colour ,if we want entire items to be in bold case etc. single items can get diff colour,bold letterhere no need of use for loop.
+items[2].style.backgroundColor = 'green';
+for(var i=0;i<items.length;i++){
+    items[i].style.fontWeight = 'bold';
+}
