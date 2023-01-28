@@ -29,7 +29,7 @@
 
 //console.dir(document)
 //Make the title have a black border
-var headerTitle = document.getElementById('header-title');
+/*var headerTitle = document.getElementById('header-title');
 var header = document.getElementById('main-header');
 
 header.style.borderBottom = 'solid 3px #000'; 
@@ -50,7 +50,7 @@ var items = document.getElementsByClassName('list-group-item');
 items[2].style.backgroundColor = 'green';
 for(var i=0;i<items.length;i++){
     items[i].style.fontWeight = 'bold';
-}
+}    */
 
 //Add a new li element without the same class Name in html file
 //And try editing it with getelementbytagname
@@ -64,7 +64,7 @@ for(var i=0;i<li.length;i++){
 
 //Add a new li element without the same class Name in html file
 //And try editing it with getelementsbyclassname
-var items = document.getElementsByClassName('list-group-item');
+/*var items = document.getElementsByClassName('list-group-item');
 //console.log(items);
 //console.log(items[1]);
 //items[1].textContent = 'hello 2';
@@ -96,14 +96,14 @@ lastItem.style.color = 'blue'; */
 //secondItem.style.color = 'green';
 
 //Make the 3rd item invisible
-var thirdItem = document.querySelector('.list-group-item:nth-child(3)');
+/*var thirdItem = document.querySelector('.list-group-item:nth-child(3)');
 thirdItem.style.visibility = 'hidden';
 
 //Choose all the odd elements and make their background green using QuerySelectorALL
 var odd = document.querySelectorAll('li:nth-child(odd)');
 for(var i=0;i<odd.length;i++){
     odd[i].style.backgroundColor = 'green';
-}
+}  */
 
 /*var even = document.querySelectorAll('li:nth-child(even)');
 for(var i=0;i<even.length;i++){
@@ -111,5 +111,109 @@ for(var i=0;i<even.length;i++){
 }*/
 
 //Using QuerySelectorALL change the font color to green for 2nd item in the item list
-var li = document.querySelectorAll('li');
-li[1].style.color = 'green';
+/*var li = document.querySelectorAll('li');
+li[1].style.color = 'green'; */
+
+
+
+//----------------------------------------------------
+
+
+//Traversing DOM
+
+
+
+
+
+var itemList = document.querySelector('#items');
+
+
+//parent node property
+//console.log(itemList.parentNode);
+//itemList.parentNode.style.backgroundColor = 'gray';
+//console.log(itemList.parentNode.parentNode);
+//console.log(itemList.parentNode.parentNode.parentNode);
+
+//parentElement property
+//console.log(itemList.parentElement);
+//itemList.parentElement.style.backgroundColor = 'gray';
+//console.log(itemList.parentElement.parentElement);
+//console.log(itemList.parentElement.parentElement.parentElement);
+
+//childNodes property
+//console.log(itemList.childNodes);
+
+//console.log(itemList.children);
+//console.log(itemList.children[0]);
+//itemList.children[0].style.backgroundColor = 'yellow';
+
+//firstChild
+//console.log(itemList.firstChild);
+//firstElementChild
+//console.log(itemList.firstElementChild);
+
+//lastElementChild
+//console.log(itemList.lastElementChild);
+
+//nextSibling
+//console.log(itemList.nextSibling);
+
+//nextElementSibling
+//console.log(itemList.nextElementSibling);
+
+//previousSibling
+//console.log(itemList.previousSibling);
+
+//previousElementSibling 
+//console.log(itemList.previousElementSibling);
+
+
+//createElement
+//create a div
+var newDev = document.createElement('div');
+//add className
+newDev.className = 'hello';
+//add id
+newDev.id = 'hello1';
+//add attribute
+newDev.setAttribute('title','Hello Div');
+
+//-----------------------------
+//Now go head and add HEllo word before Item Lister
+//create text node
+var newDivText = document.createTextNode("Hello world");
+//add text to div
+newDev.appendChild(newDivText);
+
+var container = document.querySelector('header .container');
+var h1 = document.querySelector('header h1');
+
+newDev.style.fontSize = '30px';
+container.insertBefore(newDev, h1);
+
+//--------------------------
+
+//Now go head and add HEllo word before Item 1
+// Create a "li" element:
+const newNode = document.createElement('li');
+
+// Create a text node:
+const textNode = document.createTextNode("Hello World");
+
+// Append text node to "li" element:
+newNode.appendChild(textNode);
+
+// Insert before existing child:
+const list = document.getElementById('items');
+list.insertBefore(newNode, list.children[0]);
+
+
+
+
+
+
+
+
+
+
+
